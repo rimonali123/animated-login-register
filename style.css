@@ -19,7 +19,16 @@
     position: relative;
   }
 
-  
+  .bird-panel {
+    width: 50%;
+    height: 100%;
+    background: url(./aaaa.jpg) no-repeat center/cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 1.5s ease; /* slow sliding animation */
+    z-index: 1;
+  }
 
   .form-panel {
     width: 50%;
@@ -77,3 +86,10 @@
   }
 
   /* When register is active, move bird to the right */
+  .register-active .bird-panel {
+    left: 50%; /* slide bird to the right slowly */
+  }
+
+  .register-active .form-panel {
+    margin-left: 0; /* shift form to the left */
+  }
