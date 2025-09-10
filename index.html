@@ -89,7 +89,10 @@
       errorMsg.textContent = 'Email not found!';
       return;
     }
-    
+    if(user.password !== password) {
+      errorMsg.textContent = 'Incorrect password!';
+      return;
+    }
     alert(`Welcome back, ${user.name}!`);
   });
 
