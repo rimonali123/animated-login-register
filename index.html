@@ -85,7 +85,11 @@
     const password = document.getElementById('login-password').value.trim();
 
     const user = JSON.parse(localStorage.getItem(email));
-
+    if(!user) {
+      errorMsg.textContent = 'Email not found!';
+      return;
+    }
+    
     alert(`Welcome back, ${user.name}!`);
   });
 
