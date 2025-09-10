@@ -69,7 +69,10 @@
     const email = document.getElementById('register-email').value.trim();
     const password = document.getElementById('register-password').value.trim();
 
-  
+    if(localStorage.getItem(email)) {
+      errorMsg.textContent = 'Email already registered!';
+      return;
+    }
 
     localStorage.setItem(email, JSON.stringify({name, password}));
     alert('Registration successful! You can now login.');
